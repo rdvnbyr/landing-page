@@ -24,7 +24,7 @@ body {
 
 /* Global css */
 section {
-  height: 100vh;
+  min-height: 100vh;
 }
 .class-h1 {
   color: var(--secondary);
@@ -35,8 +35,8 @@ section {
   color: var(--dark);
   margin-bottom: 1rem;
   font-size: 0.9rem;
-  word-spacing: 2px;
-  letter-spacing: 0.8px;
+  word-spacing: 1.2px;
+  letter-spacing: 0.7px;
   line-height: 1.5;
 }
 .btn {
@@ -49,17 +49,38 @@ section {
   border-radius: 6px;
 }
 .btn:active {
-  transform: translateY(-5px);
+  transform: scale(0.8);
 }
 .btn-primary {
   color: var(--white);
   background: var(--primary);
   border: 1px solid var(--primary);
+  transition: all 0.5s ease;
 }
 .btn-primary:hover {
   color: var(--primary);
   background: var(--white);
   border: 1px solid var(--primary);
+  transition: all 0.5s ease;
+}
+.btn-secondary {
+  color: var(--white);
+  background: var(--secondary);
+  border: 1px solid var(--secondary);
+  transition: all 0.5s ease;
+}
+.btn-secondary:hover {
+  color: var(--secondary);
+  background: var(--white);
+  border: 1px solid var(--secondary);
+  transition: all 0.5s ease;
+}
+.input {
+  outline: none;
+  border: 2px solid var(--primary);
+  height: 42px;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
 }
 /* Global css */
 
@@ -75,6 +96,7 @@ section {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
 .header .header_brand {
@@ -113,16 +135,15 @@ section {
   flex-direction: column;
   justify-content: center;
   padding: var(--p-section);
+  margin-top: 10px;
 }
 .section_one .image_part {
-  width: 400px;
-  height: 400px;
+  max-width: 24rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .section_one .image_part img {
   width: 100%;
-  height: 100%;
 }
 .section_one .description_part {
   display: flex;
@@ -130,16 +151,108 @@ section {
   justify-content: flex-start;
 }
 
+.section_two {
+  margin: 2rem auto;
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  border: 2px solid var(--secondary);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  width: 24rem;
+  height: auto;
+  margin: 2rem 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  transition: all 0.6s ease-in;
+}
+.card:hover {
+  /* transform: scale(1.05); */
+  transition: all 0.7s ease-out;
+  box-shadow: 5px 0px 21px 24px rgba(0, 0, 0, 0.116);
+}
+.card-header {
+  width: 100%;
+  height: 12rem;
+  /* display: flex;
+  justify-content: center; */
+  display: grid;
+  place-content: center;
+}
+.card-header img {
+  max-height: 12rem;
+  /* margin: auto; */
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+.card-body h4 {
+  color: var(--secondary);
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+.card-body p {
+  text-indent: 5px;
+}
+.card-body p span {
+  text-transform: uppercase;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+.section_three {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+.form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form .form-control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+.form-control label {
+  color: var(--primary);
+  margin-bottom: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.button-wrapper button {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.layout-footer {
+  background: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  height: 80px;
+  padding: 1rem 3rem;
+}
+
 @keyframes logo_animation {
-  /* 0% {
-        transform: scale(0);
-    } 
-    50% {
-        transform: scale(2);
-    }
-    100% {
-        transform: scale(1);
-    } */
   from {
     transform: rotate(0deg);
   }
